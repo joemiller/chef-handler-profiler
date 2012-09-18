@@ -22,8 +22,14 @@ Use the
 [chef_handler cookbook by Opscode](http://community.opscode.com/cookbooks/chef_handler).
 Create a recipe with the following:
 
+    include_recipe "chef_handler"
+
     # Install `chef-handler-profiler` gem during the compile phase
     chef_gem "chef-handler-profiler"
+
+    # load the gem here so it gets added to the $LOAD_PATH, otherwise chef_handler
+    # will fail.
+    require 'chef/handler/chef_profiler'
 
     # Activate the handler immediately during compile phase
     chef_handler "Chef::Handler::Profiler" do
