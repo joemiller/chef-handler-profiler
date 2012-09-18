@@ -27,7 +27,7 @@ Create a recipe with the following:
 
     # Activate the handler immediately during compile phase
     chef_handler "Chef::Handler::Profiler" do
-      source "chef/handler/profiler"
+      source "chef/handler/chef_profiler"
       action :nothing
     end.run_action(:enable)
 
@@ -42,7 +42,7 @@ them:
 Then add to the configuration (`/etc/chef/solo.rb` for chef-solo or
 `/etc/chef/client.rb` for chef-client):
 
-    require "chef/handler/profiler"
+    require "chef/handler/chef_profiler"
     report_handlers << Chef::Handler::Profiler.new
     exception_handlers << Chef::Handler::Profiler.new
 
