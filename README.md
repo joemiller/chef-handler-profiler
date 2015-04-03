@@ -2,9 +2,8 @@ Description
 ===========
 
 This is a Chef report handler that reports the execution time spent in each:
-cookbook, recipe, and resource.
-
-* http://wiki.opscode.com/display/chef/Exception+and+Report+Handlers
+cookbook, recipe, and resource. For more detail on handlers, see the chef
+documentation: https://docs.chef.io/handlers.html
 
 Requirements
 ============
@@ -19,7 +18,7 @@ There are two ways to use Chef Handlers.
 ### Method 1 (recommended)
 
 Use the
-[chef_handler cookbook by Opscode](http://community.opscode.com/cookbooks/chef_handler).
+[chef_handler cookbook by Opscode](https://supermarket.chef.io/cookbooks/chef_handler).
 Create a recipe with the following:
 
     include_recipe "chef_handler"
